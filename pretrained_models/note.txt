@@ -1,0 +1,3 @@
+Please put the pretrained models here. 
+
+The pretrained model checkpoints are available and will be publicly shared later. Until then, please contact the authors if you need access for reproduction or research purposes.
