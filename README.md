@@ -60,7 +60,7 @@ Please make sure the dataset paths, checkpoint paths, and any runtime options in
 
 ## Training
 
-We use **PyTorch Lightning** for training.
+We use PyTorch Lightning for training.
 
 Run the following command to train the model:
 
