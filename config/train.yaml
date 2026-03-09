@@ -1,0 +1,62 @@
+
+DATA:
+  #---------- MosMedplus ----------
+  train_csv_path: ../dct/data/MosMedplus/prompt/Train_text_MosMedplus.csv
+  val_csv_path: ../dct/data/MosMedplus/prompt/Val_text_MosMedplus.csv
+  test_csv_path: ../dct/data/MosMedplus/prompt/Test_text_MosMedplus.csv
+
+  train_root_path: ../dct/data/MosMedplus/Train_Folder
+  val_root_path: ../dct/data/MosMedplus/Val_Folder
+  test_root_path: ../dct/data/MosMedplus/Test_Folder
+
+  # # ---------- QaTa-Covid19 (switch by uncommenting) ----------
+  # train_csv_path: ../dct/data/QaTa-Covid19/prompt/Train_text_QaTa-Covid19.csv
+  # val_csv_path: ../dct/data/QaTa-Covid19/prompt/Val_text_QaTa-Covid19.csv
+  # test_csv_path: ../dct/data/QaTa-Covid19/prompt/Test_text_QaTa-Covid19.csv
+
+  # train_root_path: ../dct/data/QaTa-Covid19/Train_Folder
+  # val_root_path: ../dct/data/QaTa-Covid19/Val_Folder
+  # test_root_path: ../dct/data/QaTa-Covid19/Test_Folder
+
+
+  image_size: [224, 224]
+
+  # tokenizer max length
+  input_text_len: 24
+
+  dataset_name: MosMedplus
+  #dataset_name: QaTa-Covid19
+
+
+DATALOADER:
+  train_batch_size: 8
+  valid_batch_size: 8
+  num_workers: 0
+
+
+MODEL:
+  # Local checkpoints (if you want):
+  # bert_type: ./lib/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext
+  # vision_type: ./lib/convnext-tiny-224
+
+  vision_type: facebook/convnext-tiny-224
+  bert_type: microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext
+
+TRAIN:
+  lr: 0.00005
+  min_epochs: 1
+  max_epochs: 160
+  patience: 50
+  device: 1
+  seed: 42
+
+  ckpt_monitor: val_MIoU
+  ckpt_mode: max
+  save_top_k: 1
+
+
+LOG:
+  model_save_path: ./save_model
+  model_save_filename: MosMedplus
+  #model_save_filename: QaTa-Covid19
+ 
