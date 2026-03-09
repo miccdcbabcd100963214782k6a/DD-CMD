@@ -71,6 +71,7 @@ python train.py --config ./config/train.yaml
 ## Evaluation
 
 Use the following commands to evaluate the trained model.
+- The pretrained model checkpoints are available and will be publicly shared later. Until then, please contact the authors or create an issue if you need access for reproduction or research purposes.
 
 ### MosMedData+ Dataset
 
@@ -85,7 +86,6 @@ python evaluate.py --config ./config/train.yaml --ckpt ./pretrained_models/QaTa-
 ```
 
 ## Notes
-
 - Ensure that all dataset files and text annotations are placed in the correct locations expected by the configuration file.
 - If you use custom checkpoints, replace the `--ckpt` path with the path to your own saved model.
 - The provided configuration file can be adjusted for batch size, learning rate, dataset paths, and other experiment settings.
